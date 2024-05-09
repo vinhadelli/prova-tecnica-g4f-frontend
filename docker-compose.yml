@@ -1,0 +1,19 @@
+services:
+  db:
+    build: &build-definition
+      context: .
+      dockerfile: ./db.Dockerfile
+    container_name: json-server
+    ports:
+      - 3000:3000
+    volumes:
+      - ./database/db.json:/app/database/db.json
+  react-app:
+    build: &build-definition
+      context: .
+      dockerfile: ./react.Dockerfile
+    container_name: react-app
+    ports:
+      - 4000:4000
+    depends_on:
+      - db

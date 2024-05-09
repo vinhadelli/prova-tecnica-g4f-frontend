@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# prova-tecnica-g4f-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Prova realizada para ingressar na G4F. Este repositório contem o Frontend em React
 
-## Available Scripts
+O Backend em Adonis.js se encontra no repositório:
 
-In the project directory, you can run:
+https://github.com/vinhadelli/prova-tecnica-g4f-backend
 
-### `npm start`
+## Como Executar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Como executar a aplicação
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Localmente
 
-### `npm test`
+Executar o script `deploy-local` para inicializar o "banco" em json-server na porta 3000 e fazer o deploy da aplicação react na porta 4000.
+Há uma versão `.ps1` para Windows e uma `.sh` para Linux.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Com Docker
 
-### `npm run build`
+Executar o script `deploy-docker` para construir as imagens do "banco" em json-server e da aplicação React e fazer o deploy dos conteineres com o json-server escutando na porta 3000 e a aplicação escutando na porta 4000. O Script também para e deleta o container da execução anterior, caso ele ainda esteja rodando.
+Há uma versão `.ps1` para Windows e uma `.sh` para Linux.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Testando a Aplicação
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Testes automatizados
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Basta executar o comando `node ace test` para executar os testes automatizados
 
-### `npm run eject`
+### Teste manual
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Execute a aplicação usando um dos dois métodos acima e utilize um cliente http de sua escolha para fazer as requisições.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Rotas da Aplicação
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+A aplicação possui as seguintes rotas:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- GET /noticia - Retorna todas as notícias
+- GET /noticia/:id - Retorna uma notícia específica. Recebe o id como parâmetro
+- POST /noticia - Cadastra uma nova notícia. Recebe um JSON com a notícia a cadastrar
+- PUT /noticia/:id - Atualiza uma notícia. Recebe o id como parâmetro e um JSON com a notícia a atualizar
+- DELETE /noticia/:id - Deleta uma notícia. Recebe o id como parâmetro
+  O JSON segue o exemplo abaixo:
 
-## Learn More
+```
+{
+    "titulo": "Titulo da Notícia.",
+    "descricao":"Descrição da Notícia."
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Não é necessário autenticar para utilizar a API.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Justificando a Estrutura de Pastas
+
+A estrutura utilizada foi fortemente influênciada pela estrutura de pastas criadas na criação do projeto Adonis.js. E ela naturalmente já segue um padrão de organização bom e não foi necessário fazer grandes alterações
+
+A pasta app armazena os controllers, modelos, exceções e middleware da aplicação. basicamente os dados de negócio.
+
+A pasta config tem os arquivos de configuração da API.
+
+A pasta Database naturalmente armazena os scripts das migrations e dos seeders, para instanciar e popular o banco. Além, claro, do próprio arquivo "sqlite" do banco.
+
+A pasta start contém os arquivos que iniciam a aplicação, como rotas, variáveis de ambiente e configurações do kernel http, como configurações de quais middlewares serão utilizados. Um exemplo de middleware seria o de autenticação, que seria configurado aqui, se ele fosse utilizado.
+
+Na pasta tests temos os testes automatizados da aplicação, separados em testes funcionais e por cada comportamento testado.
+
+E por fim, a pasta bin que armazena os scripts que serão executados pelo node para inicializar a aplicação

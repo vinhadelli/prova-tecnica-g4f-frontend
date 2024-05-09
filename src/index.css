@@ -9,7 +9,7 @@ body {
     display: flex;
     background-color: #282c34;
     color: white;
-    font-size: calc(10px + 2vmin);
+    font-size: calc(8px + 2vmin);
 }
 
 code {
@@ -108,7 +108,30 @@ textarea
 {
   justify-content: center;
 }
+.a-center
+{
+  align-items: center;
+}
 .textoTabela
 {
   font-size: 16px;
+}
+.lista-cep
+{
+  font-size: 20px;
+}
+.table-noticias td
+{
+  border: 1px outset rgba(255, 255, 255, 0.349);
+}
+.table-noticias button
+{
+  padding: 8px 8px;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.tabela-acao
+{
+  min-width: 150px;
 }

@@ -44,11 +44,11 @@ export default function TableNoticia() {
   return (
       <div>
         <div className="mt-4">
-        <table>
+        <table className="table-noticias">
           <tr>
             <th className="textoTabela">Titulo</th>
             <th className="textoTabela">Descricao</th>
-            <th className="textoTabela">Ação</th>
+            <th className="textoTabela tabela-acao">Ação</th>
           </tr>
           {
             resultados.map((noticia, index) => {
@@ -56,20 +56,14 @@ export default function TableNoticia() {
                 <tr key={index}>
                   <td className="textoTabela">{ noticia.titulo }</td>
                   <td className="textoTabela">{ noticia.descricao }</td>
-                  <td className="textoTabela">
-                    <span onClick={() => { editarNoticia(noticia.id) }}>Editar</span>
-                    <span className="ml-4" onClick={() => { apagarNoticia(noticia.id) }}>Deletar</span>
+                  <td className="textoTabela tabela-acao ml-4">
+                    <button onClick={() => { editarNoticia(noticia.id) }}>Editar</button>
+                    <button className="ml-4" onClick={() => { apagarNoticia(noticia.id) }}>Deletar</button>
                   </td>
                 </tr>
               )
             })
           }
-          {/* {Object.entries(object).map(([key, value]) => (
-            <tr id={key}>
-              <td>{ value }</td>
-              <td>{ value }</td>
-            </tr>
-          ))} */}
         </table>
         </div>
       </div>
