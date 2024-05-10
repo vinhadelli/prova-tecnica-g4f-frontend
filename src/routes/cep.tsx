@@ -43,7 +43,6 @@ export default function Cep() {
     if (cep != "")
     {
       let endereco = await CepService.BuscarCep(cep)
-      console.log(endereco)
       setEnderecoBuscado(endereco)
     }
   }
@@ -54,9 +53,9 @@ export default function Cep() {
           <label className="label">
             Digite o CEP
           </label>
-          <input type="text" value={cep} onChange={bindCep}/>
+          <input id="input-cep" type="text" value={cep} onChange={bindCep}/>
       </div>
-      <button className="mt-4" onClick={buscarCep}>Enviar</button>
+      <button id="busca-cep" className="mt-4" onClick={buscarCep}>Enviar</button>
       {enderecoBuscado?.logradouro != "" &&
         <div className="mt-4 lista-cep">
           <h2>Endereço Buscado</h2>
@@ -67,7 +66,7 @@ export default function Cep() {
             </div>
             <div className="a-center d-flex ml-4">
               <label>Logradouro:     </label>
-              <p className="ml-4">{enderecoBuscado?.logradouro}</p>
+              <p id="logradouro" className="ml-4">{enderecoBuscado?.logradouro}</p>
             </div>
           </div>
           <div className="d-flex">
