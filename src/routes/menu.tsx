@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../logo.png";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 export default function Menu() {
   return (
@@ -10,15 +10,13 @@ export default function Menu() {
         <img src={logo} className="App-logo" alt="logo" />
         Selecione uma opção abaixo:
         <div className="menuInicial">
-          <a href="cep">Buscar Cep </a><br/>
-          <a href="noticias"> Administrar Notícias</a>
+          <Link to={"cep"}>Buscar Cep </Link><br/>
+          <Link to={"noticia"}> Administrar Notícias</Link>
         </div>
         </header>
         <div className="divider"></div>
         </div>
-      <div id="tela">
         <Outlet />
-      </div>
     </div>
   );
 }

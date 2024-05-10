@@ -9,7 +9,7 @@ body {
     display: flex;
     background-color: #282c34;
     color: white;
-    font-size: calc(10px + 2vmin);
+    font-size: calc(8px + 2vmin);
 }
 
 code {
@@ -18,7 +18,8 @@ code {
 }
 .App {
   margin-left: 20px;
-  margin-top: 50px
+  margin-top: 50px;
+  width: 35vmax;
 }
 .App-logo {
   height: 8vmin;
@@ -52,11 +53,85 @@ a{
   align-items: center;
   justify-content: center;
 }
+button {
+  background-color: #007dc8;
+  border: none;
+  color: white;
+  padding: 15px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  transition-duration: 0.2s;
+}
+button:hover {
+  background-color: #4090c2;
+  /* Green */
+  color: white;
+}
 .d-flex
 {
   display: flex;
 }
 .ml-4
 {
-  margin-left: 4px;
+  margin-left: 16px;
+}
+.mt-4
+{
+  margin-top: 16px;
+}
+.label
+{
+  font-size: 18px;
+}
+input
+{
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    border-radius: 8px;
+}
+textarea
+{
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    border-radius: 8px;
+}
+.j-center
+{
+  justify-content: center;
+}
+.a-center
+{
+  align-items: center;
+}
+.textoTabela
+{
+  font-size: 16px;
+}
+.lista-cep
+{
+  font-size: 20px;
+}
+.table-noticias td
+{
+  border: 1px outset rgba(255, 255, 255, 0.349);
+}
+.table-noticias button
+{
+  padding: 8px 8px;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.tabela-acao
+{
+  min-width: 150px;
 }

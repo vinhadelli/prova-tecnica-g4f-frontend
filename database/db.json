@@ -1,0 +1,34 @@
+{
+  "noticias": [
+    {
+      "titulo": "Sucesso no Lançamento de Foguete Reutilizável",
+      "descricao": "Uma empresa aeroespacial realiza com êxito o primeiro lançamento de um foguete reutilizável.",
+      "id": "d1da"
+    },
+    {
+      "titulo": "Estudo: Isolamento Social Prejudica Saúde Mental",
+      "descricao": "Pesquisa indica que o isolamento prolongado afeta negativamente a saúde mental.",
+      "id": "33c9"
+    },
+    {
+      "titulo": "Implante Neural Restaura Parcialmente Visão de Cegos",
+      "descricao": "Implante neural permite recuperação parcial da visão em pacientes cegos, prometendo melhorar suas vidas.",
+      "id": "4f6f"
+    },
+    {
+      "titulo": "Escândalo Financeiro Abala Mercado de Criptomoedas",
+      "descricao": "Um escândalo envolvendo uma grande exchange de criptomoedas causa volatilidade nos mercados digitais.",
+      "id": "77ed"
+    },
+    {
+      "id": "7928",
+      "titulo": "teste",
+      "descricao": "teste"
+    },
+    {
+      "id": "b42b",
+      "titulo": "53523523",
+      "descricao": "fsefwefwecwe"
+    }
+  ]
+}

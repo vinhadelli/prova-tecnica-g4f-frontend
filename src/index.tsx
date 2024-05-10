@@ -9,6 +9,8 @@ import {
 import Menu from './routes/menu';
 import Cep from './routes/cep';
 import Noticia from './routes/noticia';
+import CriarNoticia from './routes/noticia/criar';
+import ListarNoticia from './routes/noticia/listar';
 
 const router = createBrowserRouter([
   {
@@ -20,8 +22,20 @@ const router = createBrowserRouter([
         element: <Cep />,
       },
       {
-        path: "/noticias",
+        path: "/noticia",
         element: <Noticia />,
+      },
+      {
+        path: "/noticia/listar",
+        element: <ListarNoticia />,
+      },
+      {
+        path: "/noticia/criar",
+        element: <CriarNoticia />,
+      },
+      {
+        path: "/noticia/atualizar/:id",
+        element: <CriarNoticia />,
       },
     ]
   },
